@@ -6,9 +6,6 @@
 ;;; Code:
 
 
-;; 设置缩进
-(add-hook 'org-mode-hook #'org-indent-mode)
-
 ;; 设置org中表格的中文对齐问题
 (use-package valign
   :ensure t
@@ -16,8 +13,6 @@
   :config
   (setq valign-signal-parse-error 'non-nil))
 
-;; org配置
-(add-hook 'org-mode-hook #'org-indent-mode)
 ;; 使用org-bullets
 (use-package org-bullets
   :ensure t
