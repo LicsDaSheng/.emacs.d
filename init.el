@@ -14,7 +14,7 @@
 
 (require 'init-melpa)
 (require 'init-org)
-(require 'init-edit)
+(require 'init-editor)
 (require 'init-tab)
 (require 'init-minibuffer)
 (require 'init-ui)
