@@ -90,11 +90,12 @@ Create prefix map: +general-global-NAME. Prefix bindings in BODY with INFIX-KEY.
   (+general-global-menu! "find" "f"
     "f" 'find-file
     "r" 'consult-recent-file
+    "s" 'consult-line
     )
 
   (+general-global-menu! "window" "w"
     "1" 'delete-other-windows
-    "0" 'delete-window
+    "c" 'delete-window
     )
 
   )
