@@ -57,11 +57,22 @@
   
   )
 
+;; 支持consult中文搜索
+(progn
+  (setq consult-locate-args (encode-coding-string "es.exe -i -p -r" 'gbk))
+  (add-to-list 'process-coding-system-alist '("es" gbk . gbk))
+  )
+(eval-after-load 'consult
+  (progn
+    (setq
+     consult-narrow-key "<"
+     consult-line-numbers-widen t
+     consult-async-min-input 2
+     consult-async-refresh-delay  0.15
+     consult-async-input-throttle 0.2
+     consult-async-input-debounce 0.1)
+    ))
 
-(use-package awesome-tab
-  :load-path "~/workspace/emacs/dasheng/site-lisp/awesome-tab"
-  :config
-  (awesome-tab-mode t))
 
 
 (provide 'init-minibuffer)

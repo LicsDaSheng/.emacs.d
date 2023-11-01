@@ -5,7 +5,13 @@
 
 ;;; Code:
 
-
+;; (use-package undo-tree
+;;   :ensure t
+;;   :diminish
+;;   :init
+;;   (global-undo-tree-mode 1)
+;;   (setq undo-tree-auto-save-history nil)
+;;   (evil-set-undo-system 'undo-tree))
 
 
 ;;; 映射全角字符到半角字符

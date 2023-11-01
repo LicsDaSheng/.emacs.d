@@ -28,9 +28,37 @@
 ;; 去除临时文件
 (setq make-backup-files nil)
 
+;; 打开历史文件
+(use-package recentf
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-menu-item 10))
+
+;; 设置竖线鼠标显示
 (setq-default cursor-type 'bar)
 
 
+;; 高亮显示当前行
+(global-hl-line-mode 1)
 
+;; 自动加载外部修改过的文件。
+(global-auto-revert-mode 1)
+
+(use-package savehist
+  :ensure t
+  :hook (after-init . savehist-mode)
+  :init (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
+	      history-length 1000
+	      savehist-additional-variables '(mark-ring
+					      global-mark-ring
+					      search-ring
+					      regexp-search-ring
+					      extended-command-history)
+	      savehist-autosave-interval 300)
+  )
+
+(use-package saveplace
+  :ensure t
+  :hook (after-init . save-place-mode))
 
 (provide 'init-misc)

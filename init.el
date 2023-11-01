@@ -15,9 +15,15 @@
 (require 'init-melpa)
 (require 'init-org)
 (require 'init-edit)
-(require 'init-ide)
+(require 'init-tab)
 (require 'init-minibuffer)
-
+(require 'init-ui)
+(require 'init-evil)
+(require 'init-whichkey)
+;;(require 'init-projectil)
+(require 'init-dashboard)
+(require 'init-languages) 
+(require 'init-complete)
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (provide 'init)
