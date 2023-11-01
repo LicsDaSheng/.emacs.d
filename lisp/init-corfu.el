@@ -26,5 +26,25 @@
 ;;     (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
 ;;     (define-key company-active-map (kbd "C-p") #'company-select-previous)
 ;;     (define-key company-active-map (kbd "C-n") #'company-select-next)))
+(use-package corfu
+  :ensure t
+  :config
+  (progn
+    (setq tab-always-indent 'complete)
+    (setq completion-styles '(orderless basic))
+    (setq completion-category-defaults nil
+	  completion-category-overrides nil
+	  completion-cycle-threshold 4)
+    (setq-default corfu-auto t)
+    (with-eval-after-load 'eshell
+      (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
+    (setq-default corfu-quit-no-match 'separator)
+    (add-hook 'after-init-hook 'global-corfu-mode)
+
+    (with-eval-after-load 'corfu
+      (corfu-popupinfo-mode))
+
+    ))
+
 
 (provide 'init-complete) 

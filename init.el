@@ -16,16 +16,16 @@
 
 (require 'init-evil)
 (require 'init-editor)
+(require 'init-minibuffer)
 
 (require 'init-org)
 
-(require 'init-minibuffer)
 (require 'init-ui)
 (require 'init-whichkey)
 ;;(require 'init-projectil)
 (require 'init-dashboard)
 (require 'init-coding) 
-(require 'init-complete)
+(require 'init-corfu)
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (provide 'init)
