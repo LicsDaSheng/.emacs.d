@@ -22,4 +22,17 @@
   :init
   (doom-modeline-mode t))
 
+
+;; 设置美妙的图标
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p)) 
+
+
+;; 增加分页符号,在长文本代码中很有效 添加分页符的快捷键为 C-q C-l
+(use-package page-break-lines
+  :ensure t
+  :hook (after-init . global-page-break-lines-mode)
+)
+
 (provide 'init-ui)
