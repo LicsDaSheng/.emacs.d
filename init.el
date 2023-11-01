@@ -22,7 +22,7 @@
 (require 'init-whichkey)
 ;;(require 'init-projectil)
 (require 'init-dashboard)
-(require 'init-languages) 
+(require 'init-coding) 
 (require 'init-complete)
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
