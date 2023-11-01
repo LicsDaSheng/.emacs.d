@@ -13,12 +13,14 @@
 (require 'init-func)
 
 (require 'init-melpa)
-(require 'init-org)
+
+(require 'init-evil)
 (require 'init-editor)
-(require 'init-tab)
+
+(require 'init-org)
+
 (require 'init-minibuffer)
 (require 'init-ui)
-(require 'init-evil)
 (require 'init-whichkey)
 ;;(require 'init-projectil)
 (require 'init-dashboard)

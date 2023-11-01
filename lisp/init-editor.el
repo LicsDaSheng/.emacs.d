@@ -42,4 +42,12 @@
   (mapcar (lambda(x) (define-key key-translation-map
                                  (kbd (elt x 0)) (kbd (elt x 1)))) $replacePairs))
 
+
+;; tab标签选择
+(use-package awesome-tab
+  :load-path "~/workspace/emacs/dasheng/site-lisp/awesome-tab"
+  :config
+  (awesome-tab-mode t))
+
+
 (provide 'init-editor)
