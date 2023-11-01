@@ -5,7 +5,8 @@
 
 ;;; Code:
 
-
+;; 设置默认启动的做换行对齐处理
+(setq org-startup-indented t) 
 ;; 设置org中表格的中文对齐问题
 (use-package valign
   :ensure t
