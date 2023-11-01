@@ -49,5 +49,14 @@
   :config
   (awesome-tab-mode t))
 
+
+;; 窗口选择
+(use-package switch-window
+  :ensure t
+  :config
+  (progn
+    (setq-default switch-window-shortcut-style 'alphabet)
+    (setq-default switch-window-timeout nil)
+    (global-set-key (kbd "C-x o") 'switch-window))) 
 
 (provide 'init-editor)

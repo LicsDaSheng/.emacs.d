@@ -96,8 +96,10 @@ Create prefix map: +general-global-NAME. Prefix bindings in BODY with INFIX-KEY.
   (+general-global-menu! "window" "w"
     "1" 'delete-other-windows
     "c" 'delete-window
+    "\\" 'split-window-right
+    "-" 'split-window-below
+    "w" 'switch-window
     )
-
   )
 
 (define-key evil-insert-state-map (kbd "C-n") 'next-line)
