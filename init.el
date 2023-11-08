@@ -6,8 +6,8 @@
 ;;; Code:
 
 ;; 加载个人配置文件
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-misc)
 (require 'init-func)
@@ -26,6 +26,12 @@
 (require 'init-dashboard)
 (require 'init-coding) 
 (require 'init-corfu)
+
+(require 'init-vterm)
+
+
+;;(require 'init-eaf)
+
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (provide 'init)

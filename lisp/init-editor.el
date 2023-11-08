@@ -13,8 +13,8 @@
 ;;   (setq undo-tree-auto-save-history nil)
 ;;   (evil-set-undo-system 'undo-tree))
 (use-package hungry-delete
-	     :ensure t
-	     :hook (after-init . global-hungry-delete-mode))
+  :ensure t
+  :commands (global-hungry-delete-mode))
 
 ;;; 映射全角字符到半角字符
 (let (
@@ -45,6 +45,7 @@
 
 ;; tab标签选择
 (use-package awesome-tab
+  :disabled
   :load-path "~/workspace/emacs/dasheng/site-lisp/awesome-tab"
   :config
   (awesome-tab-mode t))
@@ -58,5 +59,7 @@
     (setq-default switch-window-shortcut-style 'alphabet)
     (setq-default switch-window-timeout nil)
     (global-set-key (kbd "C-x o") 'switch-window))) 
+
+(setq switch-window-default-window-size '(0.8 . 0.6)) 
 
 (provide 'init-editor)

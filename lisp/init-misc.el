@@ -15,7 +15,8 @@
 (global-set-key (kbd "s-z") 'undo) ;对应Windows上面的Ctrol-z 撤销
 (global-set-key (kbd "s-x") 'kill-region) ;对应Windows上面的Ctrol-x 剪切
 
-
+;;去除默认系统启动页
+(setq inhibit-startup-message nil)
 ;; 设置确认yes no 为 y n
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -26,7 +27,11 @@
 (delete-selection-mode 1)
 
 ;; 去除临时文件
-(setq make-backup-files nil)
+(setq make-backup-files nil
+      auto-save-default nil)
+
+;; 关闭锁文件
+(setq create-lockfiles nil)
 
 ;; 打开历史文件
 (use-package recentf
@@ -34,15 +39,36 @@
   (recentf-mode 1)
   (setq recentf-max-menu-item 10))
 
-;; 设置竖线鼠标显示
+;; 设置光标竖线显示
 (setq-default cursor-type 'bar)
 
+;; 设置光标颜色
+(set-cursor-color "green3")
+
+;; 设置行宽
+(setq-default fill-column 80)
 
 ;; 高亮显示当前行
 (global-hl-line-mode 1)
 
 ;; 自动加载外部修改过的文件。
 (global-auto-revert-mode 1)
+
+ 
+;; 括号字段不全
+(electric-pair-mode 1)
+
+;; 让 _ 视为单词的一部分
+(add-hook 'after-change-major-mode-hook (lambda ()
+					  (modify-syntax-entry ?_ "w")))
+
+;; 让 - 视为单词的一部分
+(add-hook 'after-change-major-mode-hook (lambda ()
+					  (modify-syntax-entry ?- "w")))
+
+;; 没有制表符
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4) 
 
 (use-package savehist
   :ensure t
