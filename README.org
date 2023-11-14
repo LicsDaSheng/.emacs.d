@@ -1,1 +1,3 @@
-# Dasheng的个人emacs配置
+* Dasheng的个人emacs配置
+
+** 立一个Flag,就在这个配置里面不断折腾 O(∩_∩)O哈哈~
