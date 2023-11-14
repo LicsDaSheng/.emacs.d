@@ -1,3 +1,7 @@
 * Dasheng的个人emacs配置
 
 ** 立一个Flag,就在这个配置里面不断折腾 O(∩_∩)O哈哈~
+
+** 参考
+[[https://github.com/Imymirror/imy-emacs.d/blob/main/configure-emacs-from-scratch.org#%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEemacs%E6%95%99%E7%A8%8B][Imymirror的从零配置emacs教程]]
+

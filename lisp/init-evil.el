@@ -96,8 +96,8 @@ Create prefix map: +general-global-NAME. Prefix bindings in BODY with INFIX-KEY.
   (+general-global-menu! "window" "w"
     "1" 'delete-other-windows
     "c" 'delete-window
-    "\\" 'split-window-right
-    "-" 'split-window-below
+    "\\" (lambda () (interactive)(split-window-horizontally) (other-window 1))
+    "-" (lambda () (interactive)(split-window-vertically) (other-window 1))
     "w" 'switch-window
     )
   )
