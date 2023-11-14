@@ -36,6 +36,10 @@
   :hook (after-init . global-page-break-lines-mode)
 )
 
+;; 设置默认开启全屏
+(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
+
 ;; 以弹框的形式展示
 (use-package posframe
   :ensure t)
