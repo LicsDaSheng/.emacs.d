@@ -10,4 +10,7 @@ projectile-bookmarks.eld
 **/.#* 
 eln-cache/29_1_90-1a065e4c
 custom.el
-custom.el
+elpa-29.1/
+transient/
+tree-sitter/
+pyim/ 

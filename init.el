@@ -29,6 +29,7 @@
 
 (require 'init-vterm)
 
+(require 'init-pyim)
 
 ;;(require 'init-eaf)
 
