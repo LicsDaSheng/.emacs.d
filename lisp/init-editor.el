@@ -45,7 +45,7 @@
 
 ;; tab标签选择
 (use-package awesome-tab
-  :disabled
+  ;;:disabled
   :load-path "~/workspace/emacs/dasheng/site-lisp/awesome-tab"
   :config
   (awesome-tab-mode t))
