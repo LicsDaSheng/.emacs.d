@@ -49,4 +49,17 @@
  
 
 
+
+;; org 自动生成页面ppt
+(use-package ox-reveal
+:ensure ox-reveal)
+
+(setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js") 
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+:ensure t)
+
+
+
 (provide 'init-org)
