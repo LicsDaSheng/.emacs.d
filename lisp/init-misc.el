@@ -66,6 +66,9 @@
 (add-hook 'after-change-major-mode-hook (lambda ()
 					  (modify-syntax-entry ?- "w")))
 
+;; 自动换行
+(global-visual-line-mode 1) 
+
 ;; 没有制表符
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) 
