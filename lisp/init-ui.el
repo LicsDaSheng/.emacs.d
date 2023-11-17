@@ -5,7 +5,7 @@
 (load-theme 'monokai 1)
 (set-frame-font "Source Code Pro-14")
 
-(set-frame-parameter nil 'alpha '(95 . 100))
+(set-frame-parameter nil 'alpha '(85 . 100))
 
 
 (use-package simple
