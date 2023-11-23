@@ -70,7 +70,7 @@ Create prefix map: +general-global-NAME. Prefix bindings in BODY with INFIX-KEY.
     )
   (+general-global-menu! "buffer" "b"
     "d" 'kill-current-buffer
-    "b" '(consult-buffer :which-key "consult buffer")
+    "b" '(ivy-switch-buffer :which-key "ivy-switch-buffer")
     "B" 'switch-to-buffer
     "p" 'previous-buffer
     "R" 'rename-buffer

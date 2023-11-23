@@ -16,7 +16,7 @@
 
 (require 'init-evil)
 (require 'init-editor)
-(require 'init-minibuffer)
+(require 'init-ivy)
 
 (require 'init-org)
 
@@ -29,7 +29,10 @@
 
 (require 'init-vterm)
 
+(require 'init-magit)
+
 (require 'init-pyim)
+;; 
 
 ;;(require 'init-eaf)
 
