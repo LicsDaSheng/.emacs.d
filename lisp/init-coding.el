@@ -53,11 +53,11 @@ Nil to use font supports ligatures."
   (setq-default prettify-symbols-alist centaur-prettify-symbols-alist)
   (setq prettify-symbols-unprettify-at-point 'right-edge))
 
-(use-package eglot
-  :after
-  rainbow-delimiters
-  :hook (prog-mode . eglot-ensure)
-  )
+;;(use-package eglot
+;;  :after
+;;  rainbow-delimiters
+;;  :hook (prog-mode . eglot-ensure)
+;;  )
 
 (use-package treesit
   :when (and (fboundp 'treesit-available-p)

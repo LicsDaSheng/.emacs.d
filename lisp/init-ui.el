@@ -3,7 +3,7 @@
 (add-to-list 'custom-theme-load-path "~/workspace/emacs/dasheng/site-lisp/monokai-theme")
 
 (load-theme 'monokai 1)
-(set-frame-font "Source Code Pro-14")
+(set-frame-font "Source Code Pro-16")
 
 (set-frame-parameter nil 'alpha '(85 . 100))
 
@@ -37,7 +37,7 @@
 )
 
 ;; 设置默认开启全屏
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
+;;(setq initial-frame-alist (quote ((fullscreen . maximized))))
 
 
 ;; 以弹框的形式展示

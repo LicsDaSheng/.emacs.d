@@ -5,3 +5,7 @@
 ** 参考
 [[https://github.com/Imymirror/imy-emacs.d/blob/main/configure-emacs-from-scratch.org#%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEemacs%E6%95%99%E7%A8%8B][Imymirror的从零配置emacs教程]]
 
+** Feature
+*** TODO org中的时间格式调整
+*** TODO org中的表格美化
+

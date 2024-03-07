@@ -1,6 +1,6 @@
 (maybe-require-package  'pyim)
 (maybe-require-package 'pyim-basedict)
-(maybe-require-package 'pyim-cregexp-utils)
+;;(maybe-require-package 'pyim-cregexp-utils)
 
 ;;设置全拼
 (pyim-default-scheme 'quanpin)

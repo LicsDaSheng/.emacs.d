@@ -11,28 +11,28 @@
 
 (require 'init-misc)
 (require 'init-func)
-
+;;
 (require 'init-melpa)
-
-(require 'init-evil)
+;;
+;;(require 'init-evil)
 (require 'init-editor)
 (require 'init-ivy)
-
+;;
 (require 'init-org)
-
+;;
 (require 'init-ui)
 (require 'init-whichkey)
-;;(require 'init-projectil)
+;;;;(require 'init-projectil)
 (require 'init-dashboard)
-(require 'init-coding) 
-(require 'init-corfu)
-
-(require 'init-vterm)
-
+;;;;(require 'init-coding) 
+;;;;(require 'init-corfu)
+;;
+;;(require 'init-vterm)
+;;
 (require 'init-magit)
 
 (require 'init-pyim)
-;; 
+ 
 
 ;;(require 'init-eaf)
 
