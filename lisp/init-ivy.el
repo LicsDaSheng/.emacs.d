@@ -1,24 +1,35 @@
-(when (maybe-require-package 'ivy)
-  ;; 打开ivy
+;;; init-ivy.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; ivy 配置
+
+;;; Code:
+
+(use-package counsel
+  :ensure t
+  :diminish counsel-mode)
+
+(use-package swiper
+  :ensure t)
+
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :init
   (ivy-mode 1)
-  
+  (counsel-mode 1)
+  :config
   (setq ivy-use-virtual-buffers t)
-  (setq ivy-count-format "(%d/%d)")
-  (global-set-key (kbd "C-s") 'swiper-isearch)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  (global-set-key (kbd "M-y") 'counsel-yank-pop)
-  (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
-  (global-set-key (kbd "C-c v") 'ivy-push-view)
-  (global-set-key (kbd "C-c V") 'ivy-pop-view)
-  )
-
-(when (maybe-require-package 'counsel)
-  (global-set-key (kbd "M-x") 'counsel-M-x))
-
+  :bind
+  ("C-s" . 'swiper-isearch)
+  ("M-x" . 'counsel-M-x)
+  ("C-x C-f" . 'counsel-find-file)
+  ("C-y" . 'counsel-yank-pop)
+  ("C-x b" . 'ivy-switch-buffer)
+ )
 
  (use-package ivy-posframe  
-   :ensure t
+   :disabled
    :after (ivy)
    :config
    ;; display at `ivy-posframe-style'
@@ -31,6 +42,6 @@
                                                 (swiper . ivy-posframe-display-at-point)
                                                 (t . ivy-posframe-display-at-window-center)))
    (ivy-posframe-mode 1))
-
 (provide 'init-ivy)
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-ivy.el ends here
