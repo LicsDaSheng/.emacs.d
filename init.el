@@ -51,6 +51,8 @@
 (require 'init-minibuffer)
 (require 'init-dired)
 (require 'init-ivy)
+(require 'init-evil)
+(require 'init-company)
 (require 'init-org)
 ;;(require 'init-evil)
 

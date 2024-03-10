@@ -4,13 +4,11 @@
 ;; evil配置，仿VIM
 
 ;;; Code:
-(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
-(require 'evil)
-(evil-mode 1)
 
-;; mode line设置，用于区分mode在不同模式的颜色
-;;(add-to-list 'load-path "~/.emacs.d/site-lisp/evil-plugins")
-;;(require 'evil-mode-line)
-
-
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-disable-insert-state-bindings t)
+  :hook (after-init . evil-mode)
+  )
 (provide 'init-evil)
