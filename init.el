@@ -47,10 +47,14 @@
 
 
 (require 'init-basic)
-(require 'init-tools)
+(require 'init-theme)
+(require 'init-minibuffer)
+(require 'init-dired)
 (require 'init-ivy)
 (require 'init-org)
 ;;(require 'init-evil)
+
+(require 'init-tools)
 
 (provide 'init)
 

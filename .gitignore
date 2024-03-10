@@ -13,4 +13,5 @@ custom.el
 elpa-29.1/
 transient/
 tree-sitter/
-pyim/ 
+pyim/
+auto-save-list/

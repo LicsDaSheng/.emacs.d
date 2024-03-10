@@ -136,7 +136,7 @@
                                  (kbd (elt x 0)) (kbd (elt x 1)))) $replacePairs))
 
 
-
+;; 设置自带的自动补全
 
 
 (provide 'init-basic)

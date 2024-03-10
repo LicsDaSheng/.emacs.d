@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+
+
 (use-package counsel
   :ensure t
   :diminish counsel-mode)
@@ -42,6 +44,8 @@
                                                 (swiper . ivy-posframe-display-at-point)
                                                 (t . ivy-posframe-display-at-window-center)))
    (ivy-posframe-mode 1))
+
+
 (provide 'init-ivy)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-ivy.el ends here
