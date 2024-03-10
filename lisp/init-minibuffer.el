@@ -21,7 +21,9 @@
 
 (use-package consult
   :ensure t
-  :bind (([remap imenu]                  . consult-imenu)
+  :bind (
+         ("C-x b" . 'consult-buffer)
+         ([remap imenu]                  . consult-imenu)
          ([remap goto-line]              . consult-goto-line)
          ([remap bookmark-jump]          . consult-bookmark)
          ([remap recentf-open-files]     . consult-recent-file)

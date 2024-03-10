@@ -4,11 +4,15 @@
 ;; org 配置
 
 ;;; Code:
-
-;; 设置默认启动的做换行对齐处理
-(setq org-startup-indented t)
-;; 设置连接地址显示，便于修改
-(setq org-link-descriptive nil)
+(use-package org
+  :ensure nil
+  :hook (org-mode . visual-line-mode)
+  :custom
+  ;; 设置默认启动的做换行对齐处理
+  (org-startup-indented t)
+  ;; 设置连接地址显示，便于修改
+  (org-link-descriptive nil)
+  )
 
 ;; 使用org-bullets
 (use-package org-bullets
@@ -28,13 +32,28 @@
 ;;   (add-hook 'dired-mode-hook 'org-download-enable)
 ;;   )
   
-  
-
-;; agenda 配置
-;; 设置agenda扫描目录
-(setq org-agenda-files '("~/sync-repo/01-note"
+(use-package org-agenda
+  :ensure nil
+  :hook (org-agenda-finalize . org-agenda-to-appt)
+  :config
+  ;; update appt list every 5 minutes
+  (run-at-time t 300 #'org-agenda-to-appt)
+  (shut-up! #'org-agenda-to-appt)
+  :custom
+  ;; (org-agenda-files (list (expand-file-name "tasks.org" org-directory)))
+  ;;(org-agenda-diary-file (expand-file-name "diary.org" org-directory))
+  ;; 设置agenda扫描目录
+  org-agenda-files '("~/sync-repo/01-note"
                          "~/sync-repo/dsl-org"
-                         "~/sync-repo/dsl-org/gtd"))
+                         "~/sync-repo/dsl-org/gtd")
+  (org-agenda-insert-diary-extract-time t)
+  (org-agenda-inhibit-startup t)
+  (org-agenda-time-leading-zero t)
+  (org-agenda-columns-add-appointments-to-effort-sum t)
+  (org-agenda-restore-windows-after-quit t)
+  (org-agenda-window-setup 'current-window)
+  ) 
+
 
 
 ;; GTD 配置
