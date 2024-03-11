@@ -47,6 +47,7 @@
 
 
 (require 'init-basic)
+(require 'init-proxy)
 (require 'init-ui)
 (require 'init-minibuffer)
 (require 'init-dired)
