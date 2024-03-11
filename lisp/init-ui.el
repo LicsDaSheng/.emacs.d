@@ -4,10 +4,16 @@
 ;; ivy 配置
 
 ;;; Code:
+;; Font
+(defun font-installed-p (font-name)
+  "Check if font with FONT-NAME is available."
+  (find-font (font-spec :name font-name)))
+
 (use-package nerd-icons
-  :ensure t
-  :when (display-graphic-p)
-  :demand t)
+  :config
+  (when (and (display-graphic-p)
+             (not (font-installed-p nerd-icons-font-family)))
+    (nerd-icons-install-fonts t)))
 
 (use-package doom-themes
   :ensure t

@@ -1,4 +1,4 @@
-;;; init-basicq.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; init-basic.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 
 ;; ivy 配置
