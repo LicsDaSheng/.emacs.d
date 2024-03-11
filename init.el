@@ -47,7 +47,7 @@
 
 
 (require 'init-basic)
-(require 'init-theme)
+(require 'init-ui)
 (require 'init-minibuffer)
 (require 'init-dired)
 (require 'init-ivy)

@@ -1,3 +1,9 @@
+;;; init-basicq.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; ivy 配置
+
+;;; Code:
 
 ;; Suppress GUI features and more
 (setq use-file-dialog nil
