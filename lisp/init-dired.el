@@ -21,6 +21,18 @@
   (dired-hide-details-hide-symlink-targets nil)
   (dired-listing-switches "-AFhlv"))
 
+
+;; Shows icons
+(use-package nerd-icons-dired
+  :ensure t
+  :diminish
+  :when (icons-displayable-p)
+  :custom-face
+  (nerd-icons-dired-dir-face ((t (:inherit nerd-icons-dsilver :foreground unspecified))))
+  :hook (dired-mode . nerd-icons-dired-mode))
+
+
+
 (use-package dired-x
   :ensure nil
   :hook (dired-mode . dired-omit-mode)
