@@ -38,7 +38,7 @@
   :config
   ;; update appt list every 5 minutes
   (run-at-time t 300 #'org-agenda-to-appt)
-  (shut-up! #'org-agenda-to-appt)
+;;  (shut-up! #'org-agenda-to-appt)
   :custom
   ;; (org-agenda-files (list (expand-file-name "tasks.org" org-directory)))
   ;;(org-agenda-diary-file (expand-file-name "diary.org" org-directory))
@@ -94,6 +94,28 @@
 ;;(with-eval-after-load 'org-agenda
 ;;  (add-hook 'org-agenda-mode-hook
 ;;            (lambda () (add-hook 'window-configuration-change-hook 'org-agenda-align-tags nil t))))
+;; 内容居中显示。
+(use-package olivetti
+  :ensure t
+  :config
+  ;; 内容区域宽度，超过后自动折行。
+  (setq-default olivetti-body-width 120)
+  (add-hook 'org-mode-hook 'olivetti-mode))
 
+;; org-present极其简约的演示工具
+(use-package org-present
+  :ensure t
+  :config
+  (autoload 'org-present "org-present" nil t)
 
+  (add-hook 'org-present-mode-hook
+            (lambda ()
+              (org-present-big)
+              (org-display-inline-images)))
+
+  (add-hook 'org-present-mode-quit-hook
+            (lambda ()
+              (org-present-small)
+              (org-remove-inline-images)))
+  )
 (provide 'init-org)
