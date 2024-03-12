@@ -27,7 +27,6 @@
   ("M-x" . 'counsel-M-x)
   ("C-x C-f" . 'counsel-find-file)
   ("C-y" . 'counsel-yank-pop)
-  ("C-x b" . 'ivy-switch-buffer)
  )
 
  (use-package ivy-posframe  
