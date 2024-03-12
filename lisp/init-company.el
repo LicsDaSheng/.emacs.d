@@ -1,4 +1,4 @@
-;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; init-company.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 
 ;; 主加载配置文件

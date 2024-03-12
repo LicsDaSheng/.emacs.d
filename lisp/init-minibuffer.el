@@ -12,6 +12,11 @@
   :custom
   (vertico-sort-function nil))
 
+(use-package nerd-icons-completion
+  :ensure t
+  :when (icons-displayable-p)
+  :hook (vertico-mode . nerd-icons-completion-mode))
+
 (use-package embark
   :ensure t
   :bind (:map minibuffer-local-map

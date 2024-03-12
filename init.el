@@ -47,7 +47,9 @@
 
 
 (require 'init-basic)
-(require 'init-theme)
+(require 'init-funcs)
+(require 'init-proxy)
+(require 'init-ui)
 (require 'init-minibuffer)
 (require 'init-dired)
 (require 'init-ivy)

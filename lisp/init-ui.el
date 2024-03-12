@@ -1,7 +1,15 @@
+;;; init-ui.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; ivy 配置
+
+;;; Code:
+
 (use-package nerd-icons
-  :ensure t
-  :when (display-graphic-p)
-  :demand t)
+  :config
+  (when (and (display-graphic-p)
+             (not (font-installed-p nerd-icons-font-family)))
+    (nerd-icons-install-fonts t)))
 
 (use-package doom-themes
   :ensure t
@@ -32,4 +40,4 @@
   (doom-modeline-persp-name nil)
   (doom-modeline-unicode-fallback t)
   (doom-modeline-enable-word-count nil))
-(provide 'init-theme)
+(provide 'init-ui)

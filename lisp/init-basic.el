@@ -1,26 +1,9 @@
-;; 提升 io 性能。
-(setq process-adaptive-read-buffering nil)
-(setq read-process-output-max (* 1024 1024 4))
-(setq inhibit-compacting-font-caches t)
-(setq-default message-log-max t)
-(setq-default ad-redefinition-action 'accept)
-(setq bidi-inhibit-bpa t)
-(setq bidi-paragraph-direction 'left-to-right)
-(setq-default bidi-display-reordering nil) 
+;;; init-basic.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
 
-;; Garbage Collector Magic Hack
-;; 提升 vterm buffer、json 文件响应性能。
-(use-package gcmh
-  :ensure t
-  :init
-  ;;(setq garbage-collection-messages t)
-  ;;(setq gcmh-verbose t)
-  (setq gcmh-idle-delay 'auto) ;; default is 15s
-  (setq gcmh-auto-idle-delay-factor 10)
-  (setq gcmh-high-cons-threshold (* 32 1024 1024))
-  (gcmh-mode 1)
-  (gcmh-set-high-threshold))
+;; ivy 配置
 
+;;; Code:
 
 ;; Suppress GUI features and more
 (setq use-file-dialog nil

@@ -5,7 +5,12 @@
 
 ;;; Code:
 
-
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion))))
+  (orderless-component-separator #'orderless-escapable-split-on-space))
 
 (use-package counsel
   :ensure t

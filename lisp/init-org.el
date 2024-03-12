@@ -44,8 +44,8 @@
   ;;(org-agenda-diary-file (expand-file-name "diary.org" org-directory))
   ;; 设置agenda扫描目录
   org-agenda-files '("~/sync-repo/01-note"
-                         "~/sync-repo/dsl-org"
-                         "~/sync-repo/dsl-org/gtd")
+                     "~/sync-repo/dsl-org"
+                     "~/sync-repo/dsl-org/gtd")
   (org-agenda-insert-diary-extract-time t)
   (org-agenda-inhibit-startup t)
   (org-agenda-time-leading-zero t)
@@ -67,13 +67,13 @@
       (quote (("NEXT" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
 
- 
+
 
 
 
 ;; org 自动生成页面ppt
 (use-package ox-reveal
-:ensure ox-reveal)
+  :ensure ox-reveal)
 
 (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js") 
 (setq org-reveal-mathjax t)
