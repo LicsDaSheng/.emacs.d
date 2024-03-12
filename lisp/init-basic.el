@@ -1,3 +1,26 @@
+;; 提升 io 性能。
+(setq process-adaptive-read-buffering nil)
+(setq read-process-output-max (* 1024 1024 4))
+(setq inhibit-compacting-font-caches t)
+(setq-default message-log-max t)
+(setq-default ad-redefinition-action 'accept)
+(setq bidi-inhibit-bpa t)
+(setq bidi-paragraph-direction 'left-to-right)
+(setq-default bidi-display-reordering nil) 
+
+;; Garbage Collector Magic Hack
+;; 提升 vterm buffer、json 文件响应性能。
+(use-package gcmh
+  :ensure t
+  :init
+  ;;(setq garbage-collection-messages t)
+  ;;(setq gcmh-verbose t)
+  (setq gcmh-idle-delay 'auto) ;; default is 15s
+  (setq gcmh-auto-idle-delay-factor 10)
+  (setq gcmh-high-cons-threshold (* 32 1024 1024))
+  (gcmh-mode 1)
+  (gcmh-set-high-threshold))
+
 
 ;; Suppress GUI features and more
 (setq use-file-dialog nil
@@ -54,6 +77,8 @@
 (use-package hl-line
   :ensure nil
   :when (display-graphic-p)
+  :config
+  (setq global-hl-line-sticky-flag t)
   :hook (after-init . global-hl-line-mode))
 
 ;; Recently opened files
@@ -100,6 +125,16 @@
 
 ;; 自动换行
 (global-visual-line-mode 1) 
+
+;; 透明背景。
+(defun my/toggle-transparency ()
+  (interactive)
+  ;; 分别为 frame 获得焦点和失去焦点的不透明度。
+  (set-frame-parameter (selected-frame) 'alpha '(90 . 90)) 
+  (add-to-list 'default-frame-alist '(alpha . (90 . 90)))
+  (add-to-list 'default-frame-alist '(alpha-background . 90)) ;; Emacs 29
+  )
+(my/toggle-transparency)
 
 ;; 没有制表符
 (setq-default indent-tabs-mode nil)
