@@ -1,7 +1,7 @@
 ;;; init-basic.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 
-;; ivy 配置
+;; 基本配置
 
 ;;; Code:
 
@@ -111,9 +111,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) 
 
-(use-package hungry-delete
-  :ensure t
-  :commands (global-hungry-delete-mode))
+;;(use-package hungry-delete
+;;  :ensure t
+;;  :commands (global-hungry-delete-mode))
 
 ;;; 映射全角字符到半角字符
 (let (
@@ -142,7 +142,41 @@
                                  (kbd (elt x 0)) (kbd (elt x 1)))) $replacePairs))
 
 
-;; 设置自带的自动补全
+;; 加载主题
+(load-theme 'leuven)
 
+;; 像素级滑动效果
+(pixel-scroll-precision-mode 1)
+(setq pixel-scroll-precision-interpolate-page t)
+(defun +pixel-scroll-interpolate-down (&optional lines)
+  (interactive)
+  (if lines
+      (pixel-scroll-precision-interpolate (* -1 lines (pixel-line-height)))
+    (pixel-scroll-interpolate-down)))
+
+(defun +pixel-scroll-interpolate-up (&optional lines)
+  (interactive)
+  (if lines
+      (pixel-scroll-precision-interpolate (* lines (pixel-line-height))))
+  (pixel-scroll-interpolate-up))
+
+(defalias 'scroll-up-command '+pixel-scroll-interpolate-down)
+(defalias 'scroll-down-command '+pixel-scroll-interpolate-up)
+
+;; beacon - Never lose your cursor again.
+(use-package pulsar
+  :ensure t
+  :init
+  (pulsar-global-mode 1)
+  (add-hook 'minibuffer-setup-hook 'pulsar-pulse-line-red )
+  :config
+  (setq pulsar-pulse t)
+  (setq pulsar-delay 0.100)
+  (setq pulsar-iterations 10)
+  (setq pulsar-face 'pulsar-magenta)
+  (setq pulsar-highlight-face 'pulsar-cyan))
+;; ----------------- minibuffer ----------------
+(fido-mode 1)
+(fido-vertical-mode 1)
 
 (provide 'init-basic)

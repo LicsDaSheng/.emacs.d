@@ -47,18 +47,18 @@
 
 
 (require 'init-basic)
-(require 'init-funcs)
-(require 'init-proxy)
-(require 'init-ui)
-(require 'init-minibuffer)
-(require 'init-dired)
-(require 'init-ivy)
-(require 'init-evil)
-(require 'init-company)
-(require 'init-org)
+;;(require 'init-funcs)
+;;(require 'init-proxy)
+;;(require 'init-ui)
+;;(require 'init-minibuffer)
+;;(require 'init-dired)
+;;(require 'init-ivy)
 ;;(require 'init-evil)
-
-(require 'init-tools)
+;;(require 'init-company)
+;;(require 'init-org)
+;;;;(require 'init-evil)
+;;
+;;(require 'init-tools)
 
 (provide 'init)
 
