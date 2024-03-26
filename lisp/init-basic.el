@@ -1,7 +1,7 @@
 ;;; init-basic.el --- Load the full configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 
-;; ivy 配置
+;; 基本配置
 
 ;;; Code:
 
@@ -117,7 +117,7 @@
   (add-to-list 'default-frame-alist '(alpha . (90 . 90)))
   (add-to-list 'default-frame-alist '(alpha-background . 90)) ;; Emacs 29
   )
-(my/toggle-transparency)
+;;(my/toggle-transparency)
 
 ;; 没有制表符
 (setq-default indent-tabs-mode nil)
@@ -154,7 +154,33 @@
                                  (kbd (elt x 0)) (kbd (elt x 1)))) $replacePairs))
 
 
-;; 设置自带的自动补全
+;; 加载主题
+(load-theme 'leuven)
+
+;; 像素级滑动效果
+(pixel-scroll-precision-mode 1)
+(setq pixel-scroll-precision-interpolate-page t)
+(defun +pixel-scroll-interpolate-down (&optional lines)
+  (interactive)
+  (if lines
+      (pixel-scroll-precision-interpolate (* -1 lines (pixel-line-height)))
+    (pixel-scroll-interpolate-down)))
+
+(defun +pixel-scroll-interpolate-up (&optional lines)
+  (interactive)
+  (if lines
+      (pixel-scroll-precision-interpolate (* lines (pixel-line-height))))
+  (pixel-scroll-interpolate-up))
+
+(defalias 'scroll-up-command '+pixel-scroll-interpolate-down)
+(defalias 'scroll-down-command '+pixel-scroll-interpolate-up)
+
+;; beacon - Never lose your cursor again.
+(use-package beacon
+  :ensure t
+  :config
+  (beacon-mode 1))
 
 
 (provide 'init-basic)
+

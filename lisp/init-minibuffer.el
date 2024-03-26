@@ -26,6 +26,7 @@
 
 (use-package consult
   :ensure t
+  :diminish
   :bind (
          ("C-x b" . 'consult-buffer)
          ([remap imenu]                  . consult-imenu)
@@ -35,29 +36,13 @@
          ([remap repeat-complex-command] . consult-complex-command)
          ([remap jump-to-register]       . consult-register-load)
          ([remap point-to-register]      . consult-register-store))
-  :config
-  (with-no-warnings
-    (consult-customize consult-ripgrep consult-git-grep consult-grep
-                       consult-bookmark
-                       consult-recent-file
-                       consult-buffer
-                       :preview-key nil))
-
-  ;; Optionally configure the register formatting. This improves the register
-  ;; preview for `consult-register', `consult-register-load',
-  ;; `consult-register-store' and the Emacs built-ins.
+  :hook (completion-list-mode . consult-preview-at-point-mode)
+  :init
+  ;;
   (setq register-preview-delay 0.5
         register-preview-function #'consult-register-format)
-
-  ;; Optionally tweak the register preview window.
-  ;; This adds thin lines, sorting and hides the mode line of the window.
   (advice-add #'register-preview :override #'consult-register-window)
-  :custom
-  (consult-fontify-preserve nil)
-  (consult-async-min-input 2)
-  (consult-async-refresh-delay 0.15)
-  (consult-async-input-throttle 0.2)
-  (consult-async-input-debounce 0.1))
+  )
 
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
@@ -67,6 +52,18 @@
 (use-package marginalia
   :ensure t
   :hook (after-init . marginalia-mode))
+
+
+
+(use-package orderless
+  :ensure t
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+;;   (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+;;         orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
 
 (provide 'init-minibuffer)
 ;;; init-minibuffer.el ends here

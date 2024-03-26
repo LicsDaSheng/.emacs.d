@@ -32,7 +32,6 @@
   (require 'use-package))
 
 
-
 ;; --debug-init implies `debug-on-error'.
 (setq debug-on-error init-file-debug)
 
@@ -48,17 +47,17 @@
 
 (require 'init-basic)
 (require 'init-funcs)
-(require 'init-proxy)
-(require 'init-ui)
+;;(require 'init-proxy)
+;;(require 'init-ui)
 (require 'init-minibuffer)
 (require 'init-dired)
 (require 'init-ivy)
-(require 'init-evil)
-(require 'init-company)
-(require 'init-org)
 ;;(require 'init-evil)
-
-(require 'init-tools)
+;;(require 'init-company)
+(require 'init-org)
+;;;;(require 'init-evil)
+;;
+;;(require 'init-tools)
 
 (provide 'init)
 

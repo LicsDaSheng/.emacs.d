@@ -5,6 +5,7 @@
 
 ;;; Code:
 
+
 (use-package orderless
   :ensure t
   :custom
@@ -34,20 +35,20 @@
   ("C-y" . 'counsel-yank-pop)
  )
 
- (use-package ivy-posframe  
-   :disabled
-   :after (ivy)
-   :config
-   ;; display at `ivy-posframe-style'
-   ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
-   ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-   ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center)))
-   ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
-   ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
-   (setq ivy-posframe-display-functions-alist '(
-                                                (swiper . ivy-posframe-display-at-point)
-                                                (t . ivy-posframe-display-at-window-center)))
-   (ivy-posframe-mode 1))
+(use-package ivy-posframe  
+  :disabled
+  :after (ivy)
+  :config
+  ;; display at `ivy-posframe-style'
+  ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+  ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+  ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center)))
+  ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
+  ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
+  (setq ivy-posframe-display-functions-alist '(
+                                               (swiper . ivy-posframe-display-at-point)
+                                               (t . ivy-posframe-display-at-window-center)))
+  (ivy-posframe-mode 1))
 
 
 (provide 'init-ivy)
